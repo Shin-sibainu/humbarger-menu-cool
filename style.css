@@ -1,0 +1,137 @@
+:root {
+  --blue-color: #4671c0;
+  --brown-color: #584e4a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  height: 100vh;
+  /* overflow: hidden; */
+  overflow: hidden;
+}
+
+.page {
+  height: 100%;
+  background-color: var(--brown-color);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  height: 200%;
+  /* transform-origin: top left; */
+  transform-origin: top left;
+  transition: all 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+
+  background-color: white;
+  /* transform: rotate(-30deg); */
+}
+
+.content-inner {
+  height: 50%;
+  /* overflow-y: auto; */
+
+  padding: 50px 20%;
+}
+
+.content p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+
+.menu-toggle {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  cursor: pointer;
+  width: 100px;
+  height: 80px;
+  background-color: var(--blue-color);
+  border-bottom-right-radius: 100%;
+}
+
+i {
+  color: white;
+}
+
+.menu-open,
+.menu-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -12px;
+  transition: all 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+}
+
+.menu-open {
+  transform-origin: -100px -100px;
+}
+
+.menu-toggle .menu-close {
+  transform-origin: -100px -100px;
+  transform: rotate(30deg);
+}
+
+.menu-items {
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-items li {
+  list-style: none;
+  height: 60px;
+  margin-bottom: 50px;
+  font-size: 1rem;
+  /* transform: translateX(-300px); */
+  transform: translateX(-300px);
+  transition: all 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+}
+
+.menu-items li:nth-child(2) {
+  margin-left: 40px;
+}
+
+.menu-items li:nth-child(3) {
+  margin-left: 80px;
+}
+
+.menu-items li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.menu-items li a .icon {
+  display: inline-block;
+  margin-right: 15px;
+  color: white;
+}
+
+.rotate .content {
+  transform: rotate(-30deg);
+}
+
+.rotate .menu-open {
+  transform: rotate(-30deg);
+}
+
+.rotate .menu-close {
+  transform: rotate(0);
+}
+
+.rotate .menu-items li {
+  transform: translateX(0);
+  transition: all 0.35s 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
